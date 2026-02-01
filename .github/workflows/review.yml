@@ -1,0 +1,22 @@
+name: AI Code Reviewer
+on: [push]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Prepare JSON and Call API
+        run: |
+          # Read the code from main.py
+          CODE_CONTENT=$(cat main.py)
+          
+          # Use jq to create a safe JSON payload
+          jq -n --arg code "$CODE_CONTENT" '{code: $code, language: "python"}' > payload.json
+          
+          # Send to your live Render API
+          curl -X POST "https://ai-code-reviewer-7z4p.onrender.com/review" \
+          -H "Content-Type: application/json" \
+          -d @payload.json

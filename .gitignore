@@ -1,0 +1,20 @@
+# 1. THE BIGGEST SECRETS (Never push these!)
+.env
+GEMINI_API_KEY
+
+# 2. PYTHON JUNK (Bloats the project)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# 3. PYCHARM & MACOS JUNK (Useless to Render)
+.idea/
+.DS_Store
+
+# 4. DISTRIBUTIONS
+dist/
+build/
+*.egg-info/

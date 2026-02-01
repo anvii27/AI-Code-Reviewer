@@ -7,8 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = FastAPI(title="AI Code Reviewer Sentinel")
-client = genai.Client(api_key="AIzaSyB9O_nogGiL3N65xydhIC2K7HFAekc6YR0")
-
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 class CodeSnippet(BaseModel):
     code: str
     language: str = "python"

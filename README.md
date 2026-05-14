@@ -81,15 +81,6 @@ npm run dev
 
 ---
 
-## Environment Variables
-
-Create a `.env` file in the root directory and add:
-
-```env
-API_KEY=your_api_key
-```
-
----
 
 
 ## Future Improvements
